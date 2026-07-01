@@ -44,6 +44,8 @@ To complement the spatial map, I integrated a reactive **Plotly** bar chart that
 
 ### 🎯 Reactive Filter Selection
 Instead of forcing users to sift through thousands of green on-time dots to find delayed buses, the reactive state-management filter allows them to isolate specific network conditions with a single click. Selecting "Heavy Delay Only" instantly strips away the noise, recalculates the KPIs, updates the Plotly volume graph, and redraws the PyDeck map to display only the most critical transit failures.
+
+
 ![Dashboard Preview](assest/filter.png)
 
 ---
