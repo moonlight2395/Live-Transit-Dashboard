@@ -17,7 +17,7 @@
 ## 🛑 The Core Problem: Big Data vs. Cloud Constraints
 Modern public transit networks generate massive amounts of spatial and temporal telemetry data every single day. For this project, the initial challenge was processing a sprawling **40 GB relational SQLite database** containing millions of historical transit trips, schedules, and GPS coordinates across Andhra Pradesh. 
 
-While querying this data locally is straightforward, web browsers notoriously crash when attempting to render hundreds of thousands of raw geographical points on a single map canvas. Furthermore, deploying this tool to a live, free-tier cloud environment introduced severe hardware constraints, specifically strict memory limits and a 100 MB file upload ceiling.
+Automated Data Slicing (extract_real_data.py): To bypass cloud storage limits, I wrote an automated extraction script. It connects locally to the massive 40GB database, runs optimized WHERE DATE() SQL queries to isolate a high-density, 1-day sample (October 1, 2023), and writes it to a new, lightweight file (portfolio_data.db). This dropped the asset footprint from gigabytes to megabytes, clearing GitHub's 100MB file limit while preserving the complete production-grade relational schema.
 
 ## 💡 The Solution
 The engineering challenge was to build a full-stack dashboard that could handle enterprise-scale transit data logic, visualize complex spatial bottlenecks without browser latency, and remain lightweight enough to operate flawlessly in a constrained cloud environment. 
