@@ -27,13 +27,21 @@ if uploaded_file is not None:
     with open(active_db_path, "wb") as f:
         f.write(uploaded_file.getbuffer())
     st.sidebar.success("Using uploaded database context!")
+# else:
+#     active_db_path = "data.db"
+#     # Clean up temp file if it exists and upload is cleared
+#     if os.path.exists("temp_viewer_database.db"):
+#         os.remove("temp_viewer_database.db")
+#     st.sidebar.info("Using default system dataset (data.db)")
 else:
-    active_db_path = "data.db"
-    # Clean up temp file if it exists and upload is cleared
+    # Changed from data.db to portfolio_data.db
+    active_db_path = "portfolio_data.db" 
+    
     if os.path.exists("temp_viewer_database.db"):
         os.remove("temp_viewer_database.db")
-    st.sidebar.info("Using default system dataset (data.db)")
-
+        
+    # Updated the sidebar text so we know it's working
+    st.sidebar.info("Using portfolio dataset (portfolio_data.db)")
 # Collapsible instructional manual detailing strict database expectations
 with st.sidebar.expander("📝 Custom Database Requirements"):
     st.markdown("""
