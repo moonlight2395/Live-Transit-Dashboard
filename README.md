@@ -14,15 +14,21 @@
 
 ---
 
+This project is a full-stack transit analytics dashboard designed to parse, process, and visually map massive streams of public transportation telemetry data to identify route delays and system bottlenecks.
+
+By combining back-end data engineering with a reactive front-end interface, it transforms raw SQL relational databases into live, interactive spatial insights.
+
+---
+
 ## 🛑 The Core Problem: Big Data vs. Cloud Constraints
 Modern public transit networks generate massive amounts of spatial and temporal telemetry data every single day. For this project, the initial challenge was processing a sprawling **40 GB relational SQLite database** containing millions of historical transit trips, schedules, and GPS coordinates across Andhra Pradesh. 
 
-Automated Data Slicing (extract_real_data.py): To bypass cloud storage limits, I wrote an automated extraction script. It connects locally to the massive 40GB database, runs optimized WHERE DATE() SQL queries to isolate a high-density, 1-day sample (October 1, 2023), and writes it to a new, lightweight file (portfolio_data.db). This dropped the asset footprint from gigabytes to megabytes, clearing GitHub's 100MB file limit while preserving the complete production-grade relational schema.
 
 ## 💡 The Solution
 The engineering challenge was to build a full-stack dashboard that could handle enterprise-scale transit data logic, visualize complex spatial bottlenecks without browser latency, and remain lightweight enough to operate flawlessly in a constrained cloud environment. 
 
-To solve the cloud hosting constraint, I wrote custom Python extraction scripts to slice the massive 40 GB database into a highly optimized, 1-day "Portfolio Slice." This allows the live web application to run at sub-second speeds while maintaining the exact architecture used for the enterprise-scale data.
+Automated Data Slicing (extract_real_data.py): To bypass cloud storage limits, I wrote an automated extraction script. It connects locally to the massive 40GB database, runs optimized WHERE DATE() SQL queries to isolate a high-density, 1-day sample (October 1, 2023), and writes it to a new, lightweight file (portfolio_data.db). This dropped the asset footprint from gigabytes to megabytes, clearing GitHub's 100MB file limit while preserving the complete production-grade relational schema.
+
 
 ---
 
