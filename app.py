@@ -23,7 +23,7 @@ uploaded_file = st.sidebar.file_uploader(
 # Manage the active database file path context
 if uploaded_file is not None:
     # Save the uploaded file safely to a temporary local file path
-    active_db_path = "temp_viewer_database.db"
+    active_db_path = "portfolio_data.db"
     with open(active_db_path, "wb") as f:
         f.write(uploaded_file.getbuffer())
     st.sidebar.success("Using uploaded database context!")
