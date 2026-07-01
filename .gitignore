@@ -1,0 +1,9 @@
+# Ignore the massive database and temp files
+data.db
+temp_viewer_database.db
+
+# Ignore Python cache and virtual environments
+__pycache__/
+.venv/
+venv/
+env/
