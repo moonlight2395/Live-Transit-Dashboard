@@ -32,19 +32,19 @@ To solve the cloud hosting constraint, I wrote custom Python extraction scripts 
 
 ### 📊 Executive KPIs & Spatial Map Engine
 To provide instant situational awareness, the dashboard opens with top-level Key Performance Indicator (KPI) cards that dynamically calculate total active trips, network-wide on-time percentages, and average system delays. Below this sits the core spatial visualization engine. Powered by **PyDeck**, the map plots transit data as interactive coordinate points layered over a clean road map. Built-in hover tooltips instantly reveal the exact location name, route ID, and real-time delay metrics for any selected transit node.
-![Dashboard Preview](map.png)
+![Dashboard Preview](assest/map.png)
 
 ### 🗄️ Dynamic Custom Database Uploader
 One of the most complex features is the dynamic file uploader in the sidebar, which allows users to upload their own `.db` or `.sqlite` files directly into the live cloud environment. The backend safely caches the file, validates the internal schema to ensure the necessary tables exist, and instantly live-swaps the application's data source, transforming the dashboard into a highly flexible tool.
-![Dashboard Preview](upload.png)
+![Dashboard Preview](assest/upload.png)
 
 ### 📈 Volume Analysis Plotly Graph
 To complement the spatial map, I integrated a reactive **Plotly** bar chart that breaks down the raw volume of trip statuses. As the dataset changes, this graph automatically categorizes the network into clear thresholds: On-Time (<5 mins), Slight Delays (5-15 mins), and Heavy Delays (>15 mins). The chart is explicitly color-coded to perfectly match the spatial indicators on the map.
-![Dashboard Preview](graph.png)
+![Dashboard Preview](assest/graph.png)
 
 ### 🎯 Reactive Filter Selection
 Instead of forcing users to sift through thousands of green on-time dots to find delayed buses, the reactive state-management filter allows them to isolate specific network conditions with a single click. Selecting "Heavy Delay Only" instantly strips away the noise, recalculates the KPIs, updates the Plotly volume graph, and redraws the PyDeck map to display only the most critical transit failures.
-![Dashboard Preview](filter.png)
+![Dashboard Preview](assest/filter.png)
 
 ---
 
